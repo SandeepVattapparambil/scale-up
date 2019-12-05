@@ -1,1 +1,48 @@
-/* App specific styles goes here */
+/* label color */
+.input-field label {
+  color: #ba68c8 ;
+}
+/* label focus color */
+.input-field input[type="text"]:focus + label {
+  color: #ba68c8 ;
+}
+/* label underline focus color */
+.input-field input[type="text"]:focus {
+  border-bottom: 1px solid #ba68c8 ;
+  box-shadow: 0 1px 0 0 #ba68c8 ;
+}
+/* valid color */
+.input-field input[type="text"].valid {
+  border-bottom: 1px solid #ba68c8 ;
+  box-shadow: 0 1px 0 0 #ba68c8 ;
+}
+/* invalid color */
+.input-field input[type="text"].invalid {
+  border-bottom: 1px solid #ba68c8 ;
+  box-shadow: 0 1px 0 0 #ba68c8 ;
+}
+/* icon prefix focus color */
+.input-field .prefix.active {
+  color: #ba68c8 ;
+}
+
+input.valid[type="password"]:not(.browser-default),
+input.valid[type="email"]:not(.browser-default) {
+  border-bottom: 1px solid #ba68c8 ;
+  -webkit-box-shadow: 0 1px 0 0 #ba68c8 ;
+  box-shadow: 0 1px 0 0 #ba68c8 ;
+}
+
+input[type="text"]:not(.browser-default):focus:not([readonly]),
+input[type="password"]:not(.browser-default):focus:not([readonly]),
+input[type="email"]:not(.browser-default):focus:not([readonly]) {
+  border-bottom: 1px solid #ba68c8 ;
+  -webkit-box-shadow: 0 1px 0 0 #ba68c8 ;
+  box-shadow: 0 1px 0 0 #ba68c8 ;
+}
+
+input[type="text"]:not(.browser-default):focus:not([readonly]) + label,
+input[type="password"]:not(.browser-default):focus:not([readonly]) + label,
+input[type="email"]:not(.browser-default):focus:not([readonly]) + label {
+  color: #ba68c8 ;
+}
