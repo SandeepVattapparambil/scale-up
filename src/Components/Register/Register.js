@@ -3,6 +3,8 @@ import { Redirect } from "react-router-dom";
 
 import "./style.css";
 
+import Row from "../Common/Row/Row";
+
 function Register(props) {
   let registerForm = React.createRef();
 
@@ -18,7 +20,7 @@ function Register(props) {
 
   return (
     <div className="register-page">
-      <div className="row">
+      <Row>
         <div className="col s12 m6 offset-m3">
           <div className="card white">
             <div className="card-content grey-text">
@@ -26,7 +28,7 @@ function Register(props) {
               <p>Enter your login details below.</p>
             </div>
             <div className="card-content grey-text">
-              <div className="row">
+              <Row>
                 <form
                   className="col s12"
                   autoComplete="off"
@@ -34,7 +36,7 @@ function Register(props) {
                   method=""
                   action=""
                 >
-                  <div className="row">
+                  <Row>
                     <div className="input-field col s12">
                       <input
                         id="user_name"
@@ -48,8 +50,8 @@ function Register(props) {
                       />
                       <label htmlFor="user_name">User Name</label>
                     </div>
-                  </div>
-                  <div className="row">
+                  </Row>
+                  <Row>
                     <div className="input-field col s12">
                       <input
                         id="password"
@@ -63,8 +65,8 @@ function Register(props) {
                       />
                       <label htmlFor="password">Password</label>
                     </div>
-                  </div>
-                  <div className="row">
+                  </Row>
+                  <Row>
                     <div className="input-field col s12">
                       <input
                         id="email"
@@ -77,9 +79,9 @@ function Register(props) {
                       />
                       <label htmlFor="email">Email</label>
                     </div>
-                  </div>
+                  </Row>
                 </form>
-              </div>
+              </Row>
             </div>
             <div className="card-action">
               <a
@@ -97,7 +99,7 @@ function Register(props) {
             </div>
           </div>
         </div>
-      </div>
+      </Row>
     </div>
   );
 }

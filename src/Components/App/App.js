@@ -1,7 +1,11 @@
 import React, { Component } from "react";
 import "./App.css";
 
-import { Route, Link, BrowserRouter as Router, Switch } from "react-router-dom";
+import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
+
+import Container from "../Common/Container/Container";
+import Row from "../Common/Row/Row";
+import Navbar from "../Navbar/Navbar";
 
 import Register from "../Register/Register";
 import Users from "../Users/Users";
@@ -69,34 +73,9 @@ class App extends Component {
     return (
       <>
         <Router>
-          <div className="navbar-fixed">
-            <nav className="white">
-              <div className="nav-wrapper">
-                <a href="#!" className="brand-logo grey-text">
-                  Registration Form
-                </a>
-                <ul className="right hide-on-med-and-down">
-                  <li>
-                    <Link to="/register" className="grey-text">
-                      Register
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="/users" className="grey-text">
-                      Users
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="/dashboard" className="grey-text">
-                      Dashboard
-                    </Link>
-                  </li>
-                </ul>
-              </div>
-            </nav>
-          </div>
-          <div className="container">
-            <div className="row">
+          <Navbar />
+          <Container>
+            <Row>
               <Switch>
                 <Route
                   exact
@@ -135,8 +114,8 @@ class App extends Component {
                 />
                 <Route component={NotFound} />
               </Switch>
-            </div>
-          </div>
+            </Row>
+          </Container>
         </Router>
       </>
     );
