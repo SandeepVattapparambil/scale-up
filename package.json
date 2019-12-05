@@ -1,6 +1,6 @@
 {
   "name": "scale-up",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "private": true,
   "dependencies": {
     "@babel/core": "7.7.4",
@@ -48,6 +48,7 @@
     "react-app-polyfill": "^1.0.5",
     "react-dev-utils": "^10.0.0",
     "react-dom": "^16.12.0",
+    "react-router-dom": "^5.1.2",
     "resolve": "1.12.2",
     "resolve-url-loader": "3.1.1",
     "sass-loader": "8.0.0",
@@ -135,5 +136,21 @@
     "presets": [
       "react-app"
     ]
-  }
+  },
+  "description": "Scale-up",
+  "main": "index.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SandeepVattapparambil/scale-up.git"
+  },
+  "keywords": [
+    "scale-up"
+  ],
+  "author": "Sandeep Vattapparambil",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SandeepVattapparambil/scale-up/issues"
+  },
+  "homepage": "https://github.com/SandeepVattapparambil/scale-up#readme"
 }
