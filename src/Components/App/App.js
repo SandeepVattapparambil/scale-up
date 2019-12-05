@@ -5,6 +5,7 @@ import { Route, Link, BrowserRouter as Router, Switch } from "react-router-dom";
 
 import Register from "../Register/Register";
 import Users from "../Users/Users";
+import Dashboard from "../Dashboard/Dashboard";
 import NotFound from "../Common/NotFound/NotFound";
 
 class App extends Component {
@@ -14,7 +15,8 @@ class App extends Component {
       userName: "",
       password: "",
       email: "",
-      registeredUsers: []
+      registeredUsers: [],
+      redirect: false
     };
     this.emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   }
@@ -43,7 +45,10 @@ class App extends Component {
           registeredUsers: [...this.state.registeredUsers, userDetails]
         },
         () => {
-          console.log(this.state.registeredUsers);
+          this.clearForm();
+          this.setState({
+            redirect: true
+          });
         }
       );
     } else {
@@ -55,7 +60,8 @@ class App extends Component {
     this.setState({
       userName: "",
       password: "",
-      email: ""
+      email: "",
+      redirect: false
     });
   };
 
@@ -72,12 +78,17 @@ class App extends Component {
                 <ul className="right hide-on-med-and-down">
                   <li>
                     <Link to="/register" className="grey-text">
-                      Login
+                      Register
                     </Link>
                   </li>
                   <li>
                     <Link to="/users" className="grey-text">
                       Users
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/dashboard" className="grey-text">
+                      Dashboard
                     </Link>
                   </li>
                 </ul>
@@ -95,6 +106,7 @@ class App extends Component {
                       saveInput={this.saveInput}
                       validateAndSubmitForm={this.validateAndSubmitForm}
                       clearForm={this.clearForm}
+                      redirect={this.state.redirect}
                     />
                   )}
                 />
@@ -105,10 +117,22 @@ class App extends Component {
                       saveInput={this.saveInput}
                       validateAndSubmitForm={this.validateAndSubmitForm}
                       clearForm={this.clearForm}
+                      redirect={this.state.redirect}
                     />
                   )}
                 />
-                <Route path="/users" component={Users} />
+                <Route
+                  path="/users"
+                  render={props => (
+                    <Users usersList={this.state.registeredUsers} />
+                  )}
+                />
+                <Route
+                  path="/dashboard"
+                  render={props => (
+                    <Dashboard userData={this.state.registeredUsers} />
+                  )}
+                />
                 <Route component={NotFound} />
               </Switch>
             </div>

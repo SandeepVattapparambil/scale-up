@@ -1,8 +1,15 @@
 import React from "react";
+import { Redirect } from "react-router-dom";
+
 import "./style.css";
 
 function Register(props) {
   let registerForm = React.createRef();
+
+  if (props.redirect) {
+    props.clearForm();
+    return <Redirect to="/users" />;
+  }
 
   function clearForm() {
     registerForm.current.reset();
@@ -20,7 +27,13 @@ function Register(props) {
             </div>
             <div className="card-content grey-text">
               <div className="row">
-                <form className="col s12" autoComplete="off" ref={registerForm}>
+                <form
+                  className="col s12"
+                  autoComplete="off"
+                  ref={registerForm}
+                  method=""
+                  action=""
+                >
                   <div className="row">
                     <div className="input-field col s12">
                       <input
