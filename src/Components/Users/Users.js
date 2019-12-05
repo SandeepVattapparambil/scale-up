@@ -4,7 +4,7 @@ import "./style.css";
 function User() {
   return (
     <div className="User">
-     <p>sdsaerterd</p>
+      <p>sdsaerterd</p>
     </div>
   );
 }
